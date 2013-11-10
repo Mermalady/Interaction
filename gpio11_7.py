@@ -8,9 +8,7 @@ GPIO.setup(22, GPIO.IN)
 GPIO.setwarnings(False)	
 
 vidplayer = vidplay.Vidplay()
-#vidplayer.play(2)
-#time.sleep(2)
-#vidplayer.stop()
+
 
 state = "Idle"
 while True:
@@ -24,7 +22,6 @@ while True:
 				state = "Active"
 			
 	elif state == "Active":
-                #start_time = time.time()
 			if GPIO.input(4) == False and GPIO.input(22) == False:
 				vidplayer.stop()
 				print("Idle")
